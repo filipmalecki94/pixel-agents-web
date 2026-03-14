@@ -1,0 +1,24 @@
+{
+  "name": "pixel-agents-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone web app that visualizes Claude Code multi-agent sessions as pixel-art animations. Based on pixel-agents VS Code extension by pablodelucca.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filipmaleckiki94/pixel-agents-web"
+  },
+  "keywords": ["claude-code", "pixel-art", "agents", "visualization", "cli"],
+  "workspaces": ["packages/server", "packages/web"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "npm -w packages/server run dev",
+    "dev:web": "npm -w packages/web run dev",
+    "build": "npm -w packages/web run build && npm -w packages/server run build",
+    "start": "node packages/server/dist/cli.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "typescript": "~5.9.3"
+  }
+}

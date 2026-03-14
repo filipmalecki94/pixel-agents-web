@@ -1,0 +1,31 @@
+{
+  "name": "@pixel-agents-web/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": {
+    "pixel-agents-web": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/cli.ts -- --path .",
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.0",
+    "express": "^5.1.0",
+    "open": "^10.0.0",
+    "ws": "^8.18.0",
+    "yargs": "^17.0.0",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/ws": "^8.5.0",
+    "@types/yargs": "^17.0.0",
+    "@types/pngjs": "^6.0.5",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3"
+  }
+}
