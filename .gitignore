@@ -2,7 +2,3 @@ node_modules/
 dist/
 .env
 *.local
-.claude/
-CLAUDE.md
-PLAN.md
-PLAN-CLAUDE-CODE-CONFIGS.md
