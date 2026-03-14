@@ -33,7 +33,7 @@ export class AgentServer implements MessageSink {
 
   constructor(private watchPath: string) {
     // Claude Code stores transcripts in ~/.claude/projects/<encoded-path>/
-    const encoded = watchPath.replace(/\//g, '-').replace(/^-/, '');
+    const encoded = watchPath.replace(/\//g, '-');
     this.projectDir = path.join(os.homedir(), '.claude', 'projects', encoded);
 
     // assetsDir points to packages/web/dist/ (sibling of packages/server/dist/)

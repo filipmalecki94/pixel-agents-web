@@ -82,13 +82,13 @@
 |---|---|---|---|
 | 3.1 | `npm run build` (full monorepo) passes | ✅ | web: 61 modules; server: tsc 0 errors; Express 5 wildcard fixed |
 | 3.2 | `packages/web/vite.config.ts` verified (outDir, base: './') | ✅ | Already correct from Stage 0 |
-| 3.3 | Manual E2E test: static render (office loads, no console errors) | ⬜ | Run server; open http://localhost:3333 |
-| 3.3 | Manual E2E test: Claude Code session → agent appears | ⬜ | |
+| 3.3 | Manual E2E test: static render (office loads, no console errors) | ✅ | Minor passive event listener warnings only |
+| 3.3 | Manual E2E test: Claude Code session → agent appears | ✅ | Fixed: path encoding bug (`-home-...` vs `home-...`) |
 | 3.3 | Manual E2E test: multi-agent (two `claude` sessions) | ⬜ | |
 | 3.3 | Manual E2E test: layout editor saves/restores | ⬜ | |
 | 3.4 | Edge cases verified (missing dir, multi-tab, WS reconnect) | ⬜ | |
 
-**Overall Etap 3:** 🚧 Build+server verified; manual browser tests pending
+**Overall Etap 3:** 🚧 Core E2E working; multi-agent + layout editor pending
 
 ---
 
