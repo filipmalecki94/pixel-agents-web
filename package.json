@@ -1,21 +1,42 @@
 {
   "name": "pixel-agents-web",
   "version": "0.1.0",
-  "private": true,
-  "description": "Standalone web app that visualizes Claude Code multi-agent sessions as pixel-art animations. Based on pixel-agents VS Code extension by pablodelucca.",
+  "description": "Standalone web app visualizing Claude Code multi-agent sessions as pixel-art. Based on pixel-agents VS Code extension by pablodelucca.",
   "license": "MIT",
+  "bin": {
+    "pixel-agents-web": "./packages/server/dist/cli.js"
+  },
+  "files": [
+    "packages/server/dist/",
+    "packages/web/dist/",
+    "packages/web/public/assets/",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/filipmaleckiki94/pixel-agents-web"
   },
-  "keywords": ["claude-code", "pixel-art", "agents", "visualization", "cli"],
+  "bugs": {
+    "url": "https://github.com/filipmaleckiki94/pixel-agents-web/issues"
+  },
+  "homepage": "https://github.com/filipmaleckiki94/pixel-agents-web#readme",
+  "author": "filipmaleckiki94 (https://github.com/filipmaleckiki94)",
+  "contributors": [
+    "Pablo De Lucca <https://github.com/pablodelucca> (original pixel-agents VS Code extension)"
+  ],
+  "keywords": [
+    "claude-code", "pixel-art", "agents", "visualization",
+    "cli", "multi-agent", "animation", "websocket"
+  ],
   "workspaces": ["packages/server", "packages/web"],
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
     "dev:server": "npm -w packages/server run dev",
     "dev:web": "npm -w packages/web run dev",
     "build": "npm -w packages/web run build && npm -w packages/server run build",
-    "start": "node packages/server/dist/cli.js"
+    "start": "node packages/server/dist/cli.js",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "concurrently": "^9.0.0",
